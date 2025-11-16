@@ -73,25 +73,10 @@ app.get('/verified', (req, res) => {
           font-weight: 600;
           color: #111827;
         }
-        .button {
-          display: inline-block;
-          margin-top: 24px;
-          padding: 14px 28px;
-          background: #059669;
-          color: #ffffff;
-          font-weight: 600;
-          font-size: 16px;
-          border-radius: 999px;
-          text-decoration: none;
-          transition: 0.2s ease;
-        }
-        .button:hover {
-          background: #047857;
-        }
         .sub {
-          margin-top: 14px;
+          margin-top: 24px;
           font-size: 13px;
-          color: #9CA3AF;
+          color: #6B7280;
         }
       </style>
     </head>
@@ -99,7 +84,7 @@ app.get('/verified', (req, res) => {
       <div class="card">
         <div class="logo">HealthZ</div>
 
-        <div class="badge">✅ Email Verified</div>
+        <div class="badge">✓ Email Verified</div>
 
         <h1>You're all set!</h1>
 
@@ -109,16 +94,17 @@ app.get('/verified', (req, res) => {
             : `<p>Your email has been successfully confirmed.</p>`
         }
 
-        <p>You can now log in to the HealthZ app and continue.</p>
+        <p>You may now return to the HealthZ app — it will automatically finish your signup.</p>
 
-        <a class="button" href="#">Return to HealthZ</a>
-
-        <div class="sub">If nothing happens, simply reopen the app and log in normally.</div>
+        <div class="sub">
+          If nothing happens, just go back to the app manually.
+        </div>
       </div>
     </body>
     </html>
   `)
 });
+
 
 // Health check
 app.get('/healthz', (req, res) => {
