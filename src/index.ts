@@ -94,7 +94,7 @@ app.get('/verified', (req, res) => {
             : `<p>Your email has been successfully confirmed.</p>`
         }
 
-        <p>You may now return to the HealthZ app — it will automatically finish your signup.</p>
+        <p>You may now return to the HealthZ app. It will automatically finish your signup once everything is set.</p>
 
       </div>
     </body>
