@@ -96,9 +96,6 @@ app.get('/verified', (req, res) => {
 
         <p>You may now return to the HealthZ app — it will automatically finish your signup.</p>
 
-        <div class="sub">
-          If nothing happens, just go back to the app manually.
-        </div>
       </div>
     </body>
     </html>
