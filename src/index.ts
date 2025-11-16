@@ -1,3 +1,12 @@
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const app = express();
+
 app.get('/verified', (req, res) => {
   const email = req.query.email || "";
 
@@ -8,7 +17,6 @@ app.get('/verified', (req, res) => {
       <meta charset="utf-8"/>
       <title>HealthZ – Email Verified</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-
       <style>
         body {
           margin: 0;
@@ -28,7 +36,6 @@ app.get('/verified', (req, res) => {
           max-width: 440px;
           box-shadow: 0 12px 30px rgba(0,0,0,0.1);
           text-align: center;
-          animation: fadeIn 0.5s ease-out;
         }
         .logo {
           font-size: 32px;
@@ -86,16 +93,10 @@ app.get('/verified', (req, res) => {
           font-size: 13px;
           color: #9CA3AF;
         }
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(15px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
       </style>
     </head>
-
     <body>
       <div class="card">
-
         <div class="logo">HealthZ</div>
 
         <div class="badge">✅ Email Verified</div>
@@ -113,9 +114,15 @@ app.get('/verified', (req, res) => {
         <a class="button" href="#">Return to HealthZ</a>
 
         <div class="sub">If nothing happens, simply reopen the app and log in normally.</div>
-
       </div>
     </body>
     </html>
   `)
-})
+});
+
+// Health check
+app.get('/healthz', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
+
+export default app;
